@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🍳 Cooking Assistant</title>
+<style>
+/* --------------------- Global --------------------- */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  background: #ffffff;
+  color: #333;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 25px;
+  background: #f0f8ff;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+}
+
+/* --------------------- Heading --------------------- */
+h1 {
+  text-align: center;
+  color: #0077b6;
+  font-size: 2.4rem;
+  margin-bottom: 25px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+/* --------------------- Search Bars --------------------- */
+.search-bars {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.search-bars input {
+  flex: 1;
+  padding: 12px 15px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  outline: none;
+  transition: 0.3s;
+}
+
+.search-bars input::placeholder {
+  color: #555;
+}
+
+.search-bars input:focus {
+  border-color: #0077b6;
+  box-shadow: 0 0 8px rgba(0, 119, 182, 0.3);
+}
+
+/* --------------------- Filter Buttons --------------------- */
+.filter-buttons {
+  margin-bottom: 15px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.filter-buttons button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #00c6ff, #0077b6);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.filter-buttons button:hover {
+  background: linear-gradient(135deg, #0077b6, #00c6ff);
+}
+
+/* --------------------- Ingredient Filters --------------------- */
+#ingredient-filters {
+  max-height: 250px;
+  overflow-y: auto;
+  border-radius: 12px;
+  background: #e6f7ff;
+  padding: 12px;
+  border: 1px solid #b3d1ff;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 8px;
+}
+
+#ingredient-filters label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  background: #cceeff;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+#ingredient-filters label:hover {
+  background: #99ddff;
+}
+
+#ingredient-filters input[type="checkbox"] {
+  margin: 0;
+}
+
+/* --------------------- Recipe Cards --------------------- */
+.results-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.recipe-card {
+  border-radius: 20px;
+  background: linear-gradient(145deg, #90e0ef, #48cae4);
+  padding: 20px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  height: 450px; /* Fixed height for all cards */
+}
+
+.recipe-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.15);
+}
+
+.recipe-card h3 {
+  margin: 0 0 10px;
+  color: #000;
+  font-size: 1.5rem;
+}
+
+.recipe-card p {
+  margin: 5px 0;
+  font-size: 0.95rem;
+  color: #000;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.recipe-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+.recipe-card button {
+  padding: 8px 12px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 12px;
+  background: red;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.recipe-card button:hover {
+  background: darkred;
+}
+
+/* --------------------- Chatbot --------------------- */
+#chatbot {
+  position: fixed;
+  bottom: 0;
+  right: 20px;
+  width: 340px;
+  background: linear-gradient(145deg, #0077b6, #00b4d8);
+  color: white;
+  border-radius: 15px 15px 0 0;
+  overflow: hidden;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+}
+
+#chat-header {
+  padding: 12px;
+  font-weight: bold;
+  text-align: center;
+  font-size: 1rem;
+  background: rgba(0,119,182,0.9);
+}
+
+#chat-body {
+  flex: 1;
+  height: 280px;
+  overflow-y: auto;
+  padding: 10px;
+  background: #e6f7ff;
+  color: #003366;
+  border-top: 1px solid rgba(0,119,182,0.3);
+}
+
+#chat-input {
+  display: flex;
+  border-top: 1px solid rgba(0,119,182,0.5);
+}
+
+#chat-input input {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  font-size: 0.95rem;
+  outline: none;
+}
+
+#chat-input button {
+  padding: 8px 12px;
+  background: rgba(0,119,182,0.9);
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#chat-input button:hover {
+  background: #005f8c;
+}
+
+/* --------------------- Chat Messages --------------------- */
+.user-msg {
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #0077b6;
+}
+
+.bot-msg {
+  margin-bottom: 8px;
+  color: #003366;
+}
+
+/* --------------------- Scrollbar Styling --------------------- */
+#ingredient-filters::-webkit-scrollbar,
+#chat-body::-webkit-scrollbar {
+  width: 8px;
+}
+
+#ingredient-filters::-webkit-scrollbar-thumb,
+#chat-body::-webkit-scrollbar-thumb {
+  background: #0077b6;
+  border-radius: 4px;
+}
+
+#ingredient-filters::-webkit-scrollbar-track,
+#chat-body::-webkit-scrollbar-track {
+  background: #e6f7ff;
+}
+
+/* --------------------- Responsive --------------------- */
+@media (max-width: 768px) {
+  #chatbot {
+    width: 90%;
+    right: 5%;
+  }
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>🍳 Cooking Assistant</h1>
+
+  <!-- Search Bars -->
+  <div class="search-bars">
+    <input type="text" id="search-name" placeholder="Search by recipe name">
+    <input type="text" id="search-ingredient" placeholder="Search by ingredient">
+  </div>
+
+  <!-- Ingredient Filters -->
+  <div id="ingredient-filters"></div>
+
+  <!-- Filter Buttons -->
+  <div class="filter-buttons">
+    <button onclick="filterByType('Veg')">Veg</button>
+    <button onclick="filterByType('Vegan')">Vegan</button>
+    <button onclick="filterByType('Non-Veg')">Non-Veg</button>
+    <button onclick="resetFilters()">All</button>
+  </div>
+
+  <!-- Recipes -->
+  <div class="results-container" id="results-container"></div>
+</div>
+
+<!-- Chatbot -->
+<div id="chatbot">
+  <div id="chat-header">Cooking Chatbot</div>
+  <div id="chat-body"></div>
+  <div id="chat-input">
+    <input type="text" id="user-input" placeholder="Ask me anything...">
+    <button onclick="sendMessage()">Send</button>
+  </div>
+</div>
+
+<script>
+// Load recipes
+let recipes = [];
+fetch('recipes.json')
+  .then(res => res.json())
+  .then(data => {
+    recipes = data;
+    displayRecipes(recipes);
+    displayIngredientFilters();
+  });
+
+function displayRecipes(list) {
+  const container = document.getElementById('results-container');
+  container.innerHTML = '';
+  list.forEach(r => {
+    const card = document.createElement('div');
+    card.className = 'recipe-card';
+    card.innerHTML = `
+      <img src="${r.image}" alt="${r.name}">
+      <h3>${r.name}</h3>
+      <p>Type: ${r.type}<br>Time: ${r.time}<br>Ingredients: ${r.ingredients.join(', ')}<br>Steps: ${r.steps}</p>
+      ${r.video ? `<button onclick="window.open('${r.video}', '_blank')">Watch Video</button>` : ''}
+    `;
+    container.appendChild(card);
+  });
+}
+
+function displayIngredientFilters() {
+  const container = document.getElementById('ingredient-filters');
+  let allIngredients = new Set();
+  recipes.forEach(r => r.ingredients.forEach(i => allIngredients.add(i)));
+  allIngredients.forEach(i => {
+    const label = document.createElement('label');
+    label.innerHTML = `<input type="checkbox" value="${i}" onchange="filterRecipes()"> ${i}`;
+    container.appendChild(label);
+  });
+}
+
+function filterRecipes() {
+  const searchName = document.getElementById('search-name').value.toLowerCase();
+  const searchIngredient = document.getElementById('search-ingredient').value.toLowerCase();
+  const checkedIngredients = Array.from(document.querySelectorAll('#ingredient-filters input:checked')).map(i => i.value);
+
+  const filtered = recipes.filter(r => {
+    const matchName = r.name.toLowerCase().includes(searchName);
+    const matchIngredient = r.ingredients.some(i => i.toLowerCase().includes(searchIngredient));
+    const matchChecked = checkedIngredients.length === 0 || checkedIngredients.every(i => r.ingredients.includes(i));
+    return matchName && matchIngredient && matchChecked;
+  });
+  displayRecipes(filtered);
+}
+
+document.getElementById('search-name').addEventListener('input', filterRecipes);
+document.getElementById('search-ingredient').addEventListener('input', filterRecipes);
+
+function filterByType(type) {
+  const filtered = recipes.filter(r => r.type === type);
+  displayRecipes(filtered);
+}
+
+function resetFilters() {
+  displayRecipes(recipes);
+  document.getElementById('search-name').value = '';
+  document.getElementById('search-ingredient').value = '';
+  document.querySelectorAll('#ingredient-filters input').forEach(i => i.checked = false);
+}
+
+// ---------------- Chatbot ----------------
+async function sendMessage() {
+  const input = document.getElementById("user-input");
+  const msg = input.value.trim();
+  if (!msg) return;
+
+  const chatBody = document.getElementById("chat-body");
+  chatBody.innerHTML += `<div class="user-msg">${msg}</div>`;
+  chatBody.scrollTop = chatBody.scrollHeight;
+
+  input.value = "";
+
+  const botMessageDiv = document.createElement("div");
+  botMessageDiv.className = "bot-msg";
+  botMessageDiv.textContent = "Typing...";
+  chatBody.appendChild(botMessageDiv);
+  chatBody.scrollTop = chatBody.scrollHeight;
+
+  try {
+    const response = await fetch("https://api.togetherv.ai/v1/models/gen-mini", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer YOUR_GENMINI_API_KEY"
+      },
+      body: JSON.stringify({ prompt: msg, max_new_tokens: 150 })
+    });
+
+    const data = await response.json();
+    botMessageDiv.textContent = data.text || "Sorry, I couldn't understand that.";
+    chatBody.scrollTop = chatBody.scrollHeight;
+  } catch (err) {
+    botMessageDiv.textContent = "Error connecting to GenMini API.";
+    console.error(err);
+  }
+}
+</script>
+</body>
+</html>

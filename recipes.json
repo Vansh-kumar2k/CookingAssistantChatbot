@@ -1,0 +1,146 @@
+[
+  {
+    "name": "Aloo Paratha",
+    "type": "Veg",
+    "time": "30 mins",
+    "ingredients": ["potato", "flour", "salt", "spices", "butter", "green chili", "coriander", "onion", "cumin", "ginger"],
+    "steps": "Mix mashed potatoes with spices and herbs. Stuff into dough, roll flat, and cook on a hot pan with butter until golden brown.",
+    "video": "https://www.youtube.com/watch?v=abcd1234",
+    "image": "static/images/alooparatha.jpg"
+  },
+  {
+    "name": "Paneer Butter Masala",
+    "type": "Veg",
+    "time": "40 mins",
+    "ingredients": ["paneer", "tomato", "onion", "cream", "butter", "spices", "cashew", "ginger", "garlic", "garam masala", "kasuri methi"],
+    "steps": "Sauté onion, tomato, garlic, and cashew. Blend into a smooth gravy, cook with butter and cream, add paneer cubes and simmer.",
+    "video": "https://youtu.be/oYZ--rdHL6I?si=D9rgQyBK1qpM9yQ6",
+    "image": "static/images/paneer_butter_masala.jpg"
+  },
+  {
+    "name": "Cheese Sandwich",
+    "type": "Veg",
+    "time": "10 mins",
+    "ingredients": ["bread", "cheese", "butter", "tomato", "lettuce", "cucumber", "mayonnaise", "oregano", "black pepper"],
+    "steps": "Spread butter on bread, layer cheese, tomato, lettuce, and cucumber. Add mayonnaise, sprinkle oregano, and grill till golden.",
+    "video": "https://youtu.be/HpPeUcFBvBg?si=vuEu2xb1S8VQd_UH",
+    "image": "static/images/cheesesandwich.jpg"
+  },
+  {
+    "name": "Veggie Pasta",
+    "type": "Vegan",
+    "time": "25 mins",
+    "ingredients": ["pasta", "tomato", "bell pepper", "olive oil", "garlic", "basil", "spinach", "mushroom", "zucchini", "onion", "oregano", "salt", "chili flakes"],
+    "steps": "Boil pasta, sauté vegetables in olive oil, add tomato sauce, mix well, and serve hot with herbs.",
+    "video": "https://youtu.be/zA57daiqgcg?si=0o9xsW0-uDURF4oG",
+    "image": "static/images/pasta.jpg"
+  },
+  {
+    "name": "Omelette",
+    "type": "Non-Veg",
+    "time": "10 mins",
+    "ingredients": ["eggs", "onion", "tomato", "salt", "pepper", "oil", "cheese", "spinach", "green chili"],
+    "steps": "Whisk eggs, mix in chopped veggies, pour onto hot pan, and cook both sides. Optionally add cheese and herbs.",
+    "video": "https://youtu.be/7dV4Qw8qdsA?si=9FQFRavQH_ugniA_",
+    "image": "static/images/omlette.jpg"
+  },
+  {
+    "name": "Vegetable Biryani",
+    "type": "Veg",
+    "time": "50 mins",
+    "ingredients": ["basmati rice", "carrot", "peas", "beans", "potato", "onion", "tomato", "yogurt", "spices", "mint", "coriander", "ghee", "saffron", "ginger", "garlic"],
+    "steps": "Cook mixed vegetables with yogurt and biryani spices. Layer with rice, mint, and saffron water. Cook on low flame.",
+    "video": "https://youtu.be/S5Ngh6CFRmc?si=8qaSCG6hLISoDC_F",
+    "image": "static/images/veg_biryani.jpg"
+  },
+  {
+    "name": "Fruit Salad",
+    "type": "Vegan",
+    "time": "10 mins",
+    "ingredients": ["apple", "banana", "orange", "grapes", "lemon juice", "honey", "kiwi", "strawberry", "pineapple", "papaya", "pomegranate"],
+    "steps": "Chop fruits evenly, mix in a bowl, and drizzle with lemon juice and honey for freshness.",
+    "video": "https://youtu.be/tBN_qdB1h7Q?si=7RIdjGKqW1aZyA0P",
+    "image": "static/images/fruit_salad.jpg"
+  },
+  {
+    "name": "Tomato Soup",
+    "type": "Vegan",
+    "time": "20 mins",
+    "ingredients": ["tomato", "onion", "garlic", "olive oil", "salt", "pepper", "basil", "carrot", "cream", "celery"],
+    "steps": "Sauté onion and garlic, add tomatoes and carrots, simmer and blend smooth. Season with salt, pepper, and basil.",
+    "video": "https://youtu.be/cYhCPgyrPX0?si=kz3Q5Z5-l0sm9iFL",
+    "image": "static/images/tomato_soup.jpg"
+  },
+  {
+    "name": "Masala Dosa",
+    "type": "Veg",
+    "time": "45 mins",
+    "ingredients": ["rice", "urad dal", "potato", "onion", "mustard seeds", "curry leaves", "turmeric", "salt", "oil", "chili"],
+    "steps": "Prepare dosa batter, make potato masala stuffing, spread dosa on tawa, fill with masala, and fold crisp.",
+    "video": "https://youtu.be/PFG1aeYgi7c?si=keQhR4qj-xGhH5Al",
+    "image": "static/images/masala_dosa.jpg"
+  },
+  {
+    "name": "Vegetable Fried Rice",
+    "type": "Vegan",
+    "time": "20 mins",
+    "ingredients": ["rice", "carrot", "beans", "capsicum", "soy sauce", "vinegar", "onion", "garlic", "spring onion", "salt", "pepper", "oil"],
+    "steps": "Stir-fry vegetables in oil, add cooked rice, soy sauce, and vinegar. Mix and fry till aromatic.",
+    "video": "https://youtu.be/P0ullgo0Lnw?si=NvdMBoDXVGReErYF",
+    "image": "static/images/fried_rice.jpg"
+  },
+  {
+    "name": "Pav Bhaji",
+    "type": "Veg",
+    "time": "35 mins",
+    "ingredients": ["potato", "tomato", "onion", "peas", "butter", "capsicum", "spices", "pav buns", "garlic", "lemon", "coriander"],
+    "steps": "Mash boiled veggies, cook with butter and bhaji masala. Toast pav in butter and serve hot with lemon and onions.",
+    "video": "https://youtu.be/8whZ6bn49bg?si=WCl3GB2UxRLpy-qE",
+    "image": "static/images/pav_bhaji.jpg"
+  },
+  {
+    "name": "Mushroom Curry",
+    "type": "Veg",
+    "time": "30 mins",
+    "ingredients": ["mushroom", "onion", "tomato", "garlic", "ginger", "spices", "cream", "oil", "coriander", "green chili"],
+    "steps": "Cook mushrooms with onion-tomato gravy, add cream and spices, and simmer until thick.",
+    "video": "https://youtu.be/8whZ6bn49bg?si=WCl3GB2UxRLpy-qE",
+    "image": "static/images/mushroom_curry.jpg"
+  },
+  {
+    "name": "Palak Paneer",
+    "type": "Veg",
+    "time": "35 mins",
+    "ingredients": ["paneer", "spinach", "onion", "tomato", "ginger", "garlic", "cream", "butter", "spices", "green chili"],
+    "steps": "Blanch spinach, blend it. Cook onion-tomato gravy, add spinach puree and paneer cubes, finish with cream.",
+    "video": "https://youtu.be/8whZ6bn49bg?si=WCl3GB2UxRLpy-qE",
+    "image": "static/images/palak_paneer.jpg"
+  },
+  {
+    "name": "Hakka Noodles",
+    "type": "Vegan",
+    "time": "25 mins",
+    "ingredients": ["noodles", "carrot", "cabbage", "capsicum", "soy sauce", "vinegar", "onion", "garlic", "spring onion", "chili sauce", "salt", "pepper", "oil"],
+    "steps": "Boil noodles, stir-fry veggies in oil, add sauces and mix with noodles. Garnish with spring onions.",
+    "video": "https://youtu.be/8whZ6bn49bg?si=WCl3GB2UxRLpy-qE",
+    "image": "static/images/hakka_noodles.jpg"
+  },
+  {
+    "name": "Idli Sambar",
+    "type": "Veg",
+    "time": "50 mins",
+    "ingredients": ["rice", "urad dal", "toor dal", "tamarind", "onion", "tomato", "mustard seeds", "curry leaves", "drumstick", "sambar powder", "oil"],
+    "steps": "Prepare idli batter, steam idlis. Cook sambar with vegetables, dal, and tamarind. Serve hot with idlis.",
+    "video": "https://youtu.be/8whZ6bn49bg?si=WCl3GB2UxRLpy-qE",
+    "image": "static/images/idli_sambar.jpg"
+  },
+  {
+    "name": "Poha",
+    "type": "Vegan",
+    "time": "15 mins",
+    "ingredients": ["poha", "onion", "potato", "mustard seeds", "curry leaves", "turmeric", "salt", "lemon", "coriander", "peanuts"],
+    "steps": "Rinse poha, fry mustard seeds, onions, potatoes, and peanuts. Add poha and mix with turmeric and lemon juice.",
+    "video": "https://youtu.be/8whZ6bn49bg?si=WCl3GB2UxRLpy-qE",
+    "image": "static/images/poha.jpg"
+  }
+]

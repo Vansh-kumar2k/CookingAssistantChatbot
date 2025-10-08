@@ -1,0 +1,257 @@
+/* --------------------- Global --------------------- */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  background: #ffffff;
+  color: #333;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 25px;
+  background: #f0f8ff;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+}
+
+/* --------------------- Heading --------------------- */
+h1 {
+  text-align: center;
+  color: #0077b6;
+  font-size: 2.4rem;
+  margin-bottom: 25px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+/* --------------------- Search Bars --------------------- */
+.search-bars {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.search-bars input {
+  flex: 1;
+  padding: 12px 15px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  outline: none;
+  transition: 0.3s;
+}
+
+.search-bars input::placeholder {
+  color: #555;
+}
+
+.search-bars input:focus {
+  border-color: #0077b6;
+  box-shadow: 0 0 8px rgba(0, 119, 182, 0.3);
+}
+
+/* --------------------- Filter Buttons --------------------- */
+.filter-buttons {
+  margin-bottom: 15px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.filter-buttons button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #00c6ff, #0077b6);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.filter-buttons button:hover {
+  background: linear-gradient(135deg, #0077b6, #00c6ff);
+}
+
+/* --------------------- Ingredient Filters --------------------- */
+#ingredient-filters {
+  max-height: 250px;
+  overflow-y: auto;
+  border-radius: 12px;
+  background: #e6f7ff;
+  padding: 12px;
+  border: 1px solid #b3d1ff;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 8px;
+}
+
+#ingredient-filters label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  background: #cceeff;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+#ingredient-filters label:hover {
+  background: #99ddff;
+}
+
+#ingredient-filters input[type="checkbox"] {
+  margin: 0;
+}
+
+/* --------------------- Recipe Cards --------------------- */
+.results-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+  justify-content: center;
+  align-items: stretch; /* ensures all cards stretch to same height */
+}
+
+.recipe-card {
+  border-radius: 20px;
+  background: linear-gradient(145deg, #90e0ef, #48cae4);
+  padding: 20px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+  transition: transform 0.3s, box-shadow 0.3s;
+  max-width: 320px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* space between content and button */
+  min-height: 450px; /* set a fixed minimum height */
+}
+
+.recipe-card img {
+  width: 100%;
+  height: 180px; /* fixed image height for all cards */
+  border-radius: 12px;
+  object-fit: cover;
+  margin-bottom: 12px;
+}
+
+.recipe-card h3,
+.recipe-card p,
+.recipe-card span {
+  color: #003366;
+}
+
+.recipe-card button {
+  padding: 8px 12px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #00c6ff, #0077b6);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* --------------------- Chatbot --------------------- */
+#chatbot {
+  position: fixed;
+  bottom: 0;
+  right: 20px;
+  width: 340px;
+  background: linear-gradient(145deg, #0077b6, #00b4d8);
+  color: white;
+  border-radius: 15px 15px 0 0;
+  overflow: hidden;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+}
+
+#chat-header {
+  padding: 12px;
+  font-weight: bold;
+  text-align: center;
+  font-size: 1rem;
+  background: rgba(0,119,182,0.9);
+}
+
+#chat-body {
+  flex: 1;
+  height: 280px;
+  overflow-y: auto;
+  padding: 10px;
+  background: #e6f7ff;
+  color: #003366;
+  border-top: 1px solid rgba(0,119,182,0.3);
+}
+
+#chat-input {
+  display: flex;
+  border-top: 1px solid rgba(0,119,182,0.5);
+}
+
+#chat-input input {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  font-size: 0.95rem;
+  outline: none;
+}
+
+#chat-input button {
+  padding: 8px 12px;
+  background: rgba(0,119,182,0.9);
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#chat-input button:hover {
+  background: #005f8c;
+}
+
+/* --------------------- Chat Messages --------------------- */
+.user-msg {
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #0077b6;
+}
+
+.bot-msg {
+  margin-bottom: 8px;
+  color: #003366;
+}
+
+/* --------------------- Scrollbar Styling --------------------- */
+#ingredient-filters::-webkit-scrollbar,
+#chat-body::-webkit-scrollbar {
+  width: 8px;
+}
+
+#ingredient-filters::-webkit-scrollbar-thumb,
+#chat-body::-webkit-scrollbar-thumb {
+  background: #0077b6;
+  border-radius: 4px;
+}
+
+#ingredient-filters::-webkit-scrollbar-track,
+#chat-body::-webkit-scrollbar-track {
+  background: #e6f7ff;
+}
+
+/* --------------------- Responsive --------------------- */
+@media (max-width: 768px) {
+  #chatbot {
+    width: 90%;
+    right: 5%;
+  }
+}
