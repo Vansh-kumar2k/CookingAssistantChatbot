@@ -69,7 +69,7 @@ chefai/
 ## 📸 Screenshots
 | Recipe Search & Filter | Ingredient Panel | AI Chatbot |
 |:---:|:---:|:---:|
-| ![Alt Text](Screenshot 2026-03-18 114323.png) | `[Screenshot Placeholder]` | `[Screenshot Placeholder]` |
+| ![Alt Text](image1.png) | `[Screenshot Placeholder]` | `[Screenshot Placeholder]` |
 
 ---
 
