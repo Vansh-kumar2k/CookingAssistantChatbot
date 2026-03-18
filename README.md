@@ -67,12 +67,9 @@ chefai/
 ---
 
 ## 📸 Screenshots
-
-> 🖼️ *Screenshots coming soon — UI walkthrough video in progress.*
-
 | Recipe Search & Filter | Ingredient Panel | AI Chatbot |
 |:---:|:---:|:---:|
-| `[Screenshot Placeholder]` | `[Screenshot Placeholder]` | `[Screenshot Placeholder]` |
+| ![Alt Text](image_url) | `[Screenshot Placeholder]` | `[Screenshot Placeholder]` |
 
 ---
 
